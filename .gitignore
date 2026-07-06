@@ -1,0 +1,67 @@
+# High-resolution master files (too large for GitHub — website uses JPGs)
+*.tif
+*.TIF
+
+# Deployment helper script
+push_to_github.command
+
+# System
+.DS_Store
+Thumbs.db
+
+# HEIC files (not browser-compatible)
+*.HEIC
+*.heic
+
+# Personal / private files — do not publish
+birthday_guestlist.xlsx
+"Lydia 50th Invite.jpeg"
+"Lydia 50th Invite v2.jpeg"
+Lydia\ 50th/
+"Sovereign Art Prize 2026"/
+
+# Substack assets (not part of site)
+substack_header.jpg
+
+# Unused image variants in root (not referenced by any page)
+11f80a27-bbe9-49a4-ad72-f0d90055f2b9.JPG
+16366EB7-90E2-43F7-846E-D9A57C2E6840.JPG
+3b1bd67f-92b0-42c1-a3e2-609241b499a7\ 4.JPG
+554e045a-f84e-4d7a-8eb8-2faa2f30a706\ 2.jpg
+554e045a-f84e-4d7a-8eb8-2faa2f30a706\ 4.jpg
+658953d9-8dd6-4d50-a110-978156f9429c.JPG
+71DA67E1-A4A6-4857-A729-D7531D6C9045.JPG
+73f5a2b5-cb20-4bed-9cba-1f5983318e16.JPG
+835d633e-aa30-419a-9850-26b74f29f30a\ 2.jpg
+835d633e-aa30-419a-9850-26b74f29f30a\ 4.jpg
+8F124D36-E659-4924-82C8-A4DFAB580283.JPG
+9EF2FFCD-B56D-466F-B0C3-0AC96738FD5F\ 3.JPG
+FD643709-F034-49E6-8B32-583B5E1C57B4\ 3.JPG
+IMG_2416.jpg
+IMG_3801\ 2.JPG
+IMG_4075\ 4.jpg
+IMG_4441\ 2.jpg
+IMG_4441\ 3.jpg
+IMG_4441\ 4.jpg
+IMG_4441\ 5.jpg
+IMG_4075.jpg
+IMG_4441.jpg
+IMG_8022\ 3.JPG
+IMG_8027.JPG
+IMG_8027\ 2.JPG
+IMG_8027\ 3.JPG
+IMG_8505.jpg
+Yellow\ Brick\ Road\ image.JPG
+Arms\ detail.jpg
+Arms\ detail\ copy.jpg
+Bed\ on\ the\ ship\ angle.jpg
+slight\ swim\ detail\ 2.jpg
+The\ Bed\ \(on\ the\ ship\)\ -\ 2023\ -\ Oil,\ charcoal\ and\ pencil\ on\ linen\ -\ 150x122cm.jpg
+The\ Hat-Trick,\ 2025.jpeg
+The\ King\ and\ Queen-b.jpg
+The\ Listing.jpg
+The\ Listing\ \(detail\).jpg
+The\ bed\ on\ the\ Ship\ LOW\ RES.jpg
+Study\ in\ Release\ \(I\)\ -\ 2026\ -\ Oil\ and\ charcoal\ on\ linen\ -\ 178x178cm.jpeg
+"Study in Release(I), Oil and charcoal in linen, 178 x 178cm, 2026.jpg"
+Prestige\ Photo\ Shoot.png

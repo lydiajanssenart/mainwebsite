@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Press — Lydia Janssen</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Press and media coverage of Lydia Janssen — Asian Art News, London Art Biennale, Expat Living Singapore, Artsy and more.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lydiajanssen.com/press.html">
+  <meta property="og:title" content="Press — Lydia Janssen">
+  <meta property="og:description" content="Press and media coverage of Lydia Janssen — Asian Art News, London Art Biennale, Expat Living Singapore, Artsy and more.">
+  <meta property="og:image" content="https://lydiajanssen.com/images/artist-photo/Lydia%20Hat%20Studio%20Pic.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Press — Lydia Janssen">
+  <meta name="twitter:description" content="Press and media coverage of Lydia Janssen — Asian Art News, London Art Biennale, Expat Living Singapore, Artsy and more.">
+  <meta name="twitter:image" content="https://lydiajanssen.com/images/artist-photo/Lydia%20Hat%20Studio%20Pic.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://lydiajanssen.com/press.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    /* Magazine cover thumbnail styles */
+    .press-cover-asian-art-news {
+      background: #fff;
+      border: 1px solid #e0d5b0;
+      position: relative;
+      overflow: hidden;
+    }
+    .press-cover-asian-art-news::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: #b8960c;
+    }
+    .press-cover-asian-art-news .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-asian-art-news .cover-pub {
+      font-family: Georgia, serif;
+      font-size: 15px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #1a1a1a;
+      line-height: 1.15;
+    }
+    .press-cover-asian-art-news .cover-pub span { color: #b8960c; }
+    .press-cover-asian-art-news .cover-sub {
+      font-size: 7px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 3px;
+    }
+    .cover-rule {
+      height: 1px;
+      background: currentColor;
+      opacity: 0.15;
+      margin: 12px 0;
+    }
+    .cover-tagline {
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: auto;
+    }
+
+    .press-cover-art-republik {
+      background: #0a1628;
+    }
+    .press-cover-art-republik .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-art-republik .cover-pub {
+      font-family: Georgia, serif;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .press-cover-art-republik .cover-accent {
+      width: 24px;
+      height: 2px;
+      background: #e8a020;
+      margin: 10px 0;
+    }
+    .press-cover-art-republik .cover-tagline {
+      font-size: 9px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    .press-cover-elle {
+      background: #fff;
+      border: 1px solid #eee;
+    }
+    .press-cover-elle .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-elle .cover-pub {
+      font-family: Georgia, serif;
+      font-size: 40px;
+      font-weight: bold;
+      font-style: italic;
+      color: #000;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .press-cover-elle .cover-sub {
+      font-size: 7px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 2px;
+    }
+    .press-cover-elle .cover-tagline {
+      font-size: 9px;
+      color: #888;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    .press-cover-expat {
+      background: #f5f0e8;
+      border: 1px solid #e0d8c8;
+    }
+    .press-cover-expat .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-expat .cover-pub {
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #2a5c8a;
+      line-height: 1.3;
+    }
+    .press-cover-expat .cover-sub {
+      font-size: 7px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 3px;
+    }
+    .press-cover-expat .cover-tagline {
+      font-size: 9px;
+      color: #888;
+      letter-spacing: 0.08em;
+      margin-top: auto;
+    }
+
+    .press-cover-meer {
+      background: #1c1c1c;
+    }
+    .press-cover-meer .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-meer .cover-pub {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      font-weight: normal;
+      color: #fff;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .press-cover-meer .cover-sub {
+      font-size: 7px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-top: 6px;
+    }
+    .press-cover-meer .cover-tagline {
+      font-size: 9px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    .press-cover-poons {
+      background: #f2ede6;
+      border: 1px solid #ddd6cc;
+    }
+    .press-cover-poons .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-poons .cover-pub {
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: italic;
+      color: #222;
+      line-height: 1.4;
+    }
+    .press-cover-poons .cover-sub {
+      font-size: 7px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #999;
+      margin-top: 8px;
+    }
+    .press-cover-poons .cover-tagline {
+      font-size: 9px;
+      color: #999;
+      letter-spacing: 0.08em;
+      margin-top: auto;
+    }
+
+    .press-cover-artsy {
+      background: #000;
+    }
+    .press-cover-artsy .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-artsy .cover-pub {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      color: #fff;
+      line-height: 1;
+    }
+    .press-cover-artsy .cover-sub {
+      font-size: 7px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-top: 6px;
+    }
+    .press-cover-artsy .cover-tagline {
+      font-size: 9px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    .press-cover-awdb {
+      background: #1a1a2e;
+    }
+    .press-cover-awdb .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-awdb .cover-pub {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.4;
+    }
+    .press-cover-awdb .cover-sub {
+      font-size: 7px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-top: 6px;
+    }
+    .press-cover-awdb .cover-tagline {
+      font-size: 9px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: auto;
+    }
+
+    .press-cover-peruke {
+      background: #f4f1ec;
+      border: 1px solid #e0d8cc;
+    }
+    .press-cover-peruke .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-peruke .cover-pub {
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-weight: normal;
+      font-style: italic;
+      color: #333;
+      line-height: 1.4;
+    }
+    .press-cover-peruke .cover-sub {
+      font-size: 7px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-top: 6px;
+    }
+    .press-cover-peruke .cover-tagline {
+      font-size: 9px;
+      color: #aaa;
+      letter-spacing: 0.08em;
+      margin-top: auto;
+    }
+
+    .press-cover-critique {
+      background: #f8f8f8;
+      border: 1px solid #e8e8e8;
+    }
+    .press-cover-critique .cover-inner {
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .press-cover-critique .cover-pub {
+      font-family: Georgia, serif;
+      font-size: 13px;
+      font-weight: normal;
+      font-style: italic;
+      color: #333;
+      line-height: 1.4;
+    }
+    .press-cover-critique .cover-sub {
+      font-size: 7px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-top: 6px;
+    }
+    .press-cover-critique .cover-tagline {
+      font-size: 9px;
+      color: #aaa;
+      margin-top: auto;
+    }
+
+    /* Real cover images */
+    .press-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="left">
+    <a href="works.html">Works</a>
+    <a href="press.html" class="active">Press</a>
+    <a href="https://vilicusveritatis633506.substack.com" target="_blank">Substack</a>
+  </nav>
+  <a href="index.html" class="site-name">Lydia Janssen</a>
+  <nav class="right">
+    <a href="about.html">About</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="page-content" style="max-width: 1300px;">
+    <h1>Press</h1>
+
+    <div class="press-grid">
+
+      <a class="press-card" href="https://perukeprojects.com/curatorial-projects/" target="_blank">
+        <div class="press-card-img">
+          <img src="https://i0.wp.com/perukeprojects.com/wp-content/uploads/2023/06/ItinerantPracticesThreeArtworks1024x464.jpg" alt="Itinerant Practices — Peruke Projects">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Peruke Projects</span>
+          <span class="press-card-date">September 2023</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="https://artworlddatabase.com/features/awdb-spotlight-interview-with-lydia-janssen/" target="_blank">
+        <div class="press-card-img">
+          <img src="https://artworlddatabase.com/wp-content/uploads/2023/08/Lydia-in-her-studio-in-Melides-Portugal-with-her-daughter-in-2020-during-the-pandemic-Image-from-Luke-Janssen-.jpg" alt="Lydia Janssen — Art World Database Interview">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Art World Database</span>
+          <span class="press-card-date">August 2023</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="images/press/Expat Living - January 2023.html" target="_blank">
+        <div class="press-card-img">
+          <img src="https://www.discountmags.com/shopimages/products/extras/890805-expat-living-singapore-cover-january-2023-issue.jpg" alt="Expat Living Singapore January 2023 Cover">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Expat Living</span>
+          <span class="press-card-date">January 2023</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="images/press/Stig Andersen Critique.pdf" target="_blank">
+        <div class="press-card-img">
+          <img src="images/press/yellow-brick-road.jpg" alt="Yellow Brick Road — Solo Exhibition by Lydia Janssen">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Stig Andersen</span>
+          <span class="press-card-date">2023</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="images/press/Asian Art News Cover 2020.png" target="_blank">
+        <div class="press-card-img">
+          <img src="images/press/Asian Art News Cover 2020.png" alt="Asian Art News Cover 2020 — Lydia Janssen">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Asian Art News</span>
+          <span class="press-card-date">Cover 2020</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="images/press/Larry Poons Foreword.pdf" target="_blank">
+        <div class="press-card-img">
+          <img src="https://m.media-amazon.com/images/I/71EIRasBOhL.jpg" alt="Dance into Art — Larry Poons Foreword" style="object-position: bottom;">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Larry Poons</span>
+          <span class="press-card-date">Foreword 2019</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="images/press/Asian Art News cover 2018.png" target="_blank">
+        <div class="press-card-img">
+          <img src="images/press/Asian Art News cover 2018.png" alt="Asian Art News Cover 2018 — Lydia Janssen">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Asian Art News</span>
+          <span class="press-card-date">2018</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="https://www.luxuo.com/culture/art/redsea-lydia-janssen.html" target="_blank">
+        <div class="press-card-img">
+          <img src="https://static-assets.artlogic.net/w_800,h_800,c_limit,f_auto,fl_lossy,q_auto/ws-artlogicwebsiteee0007/usr/press/main_image/53/screen-shot-2022-07-05-at-8.28.18-pm.jpg" alt="Luxuo — REDSEA Gallery Debuts Lydia Janssen">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Luxuo</span>
+          <span class="press-card-date">January 2018</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="images/press/Art Republik - January 2018.html" target="_blank">
+        <div class="press-card-img">
+          <img src="https://files.magzter.com/resize/magazine/1398998943/1514277162/view/2.jpg" alt="Art Republik Cover">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Art Republik</span>
+          <span class="press-card-date">January 2018</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="images/press/Elle Singapore - January 2018.html" target="_blank">
+        <div class="press-card-img">
+          <img src="https://downmagaz.net/uploads/posts/2017-12/1513832591_e_sg_2018_01_downmagaz.com.jpg" alt="Elle Singapore January 2018 Cover">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Elle Singapore</span>
+          <span class="press-card-date">January 2018</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="https://www.artsy.net/article/editorial-a-dancer-turned-painter-captures-movement-in-paint" target="_blank">
+        <div class="press-card-img" style="background:#000; display:flex; align-items:center; justify-content:center;">
+          <img src="https://d1s2w0upia4e9w.cloudfront.net/images/apple-touch-icon.png" alt="Artsy" style="width:60%; height:auto; object-fit:contain;">
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">Artsy</span>
+          <span class="press-card-date">August 2014</span>
+        </div>
+      </a>
+
+      <a class="press-card" href="images/press/MEER - July 2014.html" target="_blank">
+        <div class="press-card-img press-cover-meer">
+          <div class="cover-inner">
+            <div class="cover-pub">MEER</div>
+            <div class="cover-sub">Art &amp; Culture</div>
+            <div class="cover-tagline">International Edition</div>
+          </div>
+        </div>
+        <div class="press-card-meta">
+          <span class="press-card-pub">MEER</span>
+          <span class="press-card-date">July 2014</span>
+        </div>
+      </a>
+
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <span>&copy; 2026 Lydia Janssen</span>
+  <a href="https://www.instagram.com/lydiajanssenart/" target="_blank">Instagram</a>
+</footer>
+<span class="page-number">02</span>
+
+</body>
+</html>

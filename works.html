@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works — Lydia Janssen</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Selected paintings by Lydia Janssen — oil on linen, charcoal and pastel works spanning 2006 to 2026. Themes of movement, displacement and the body.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lydiajanssen.com/works.html">
+  <meta property="og:title" content="Works — Lydia Janssen">
+  <meta property="og:description" content="Selected paintings by Lydia Janssen — oil on linen, charcoal and pastel works spanning 2006 to 2026. Themes of movement, displacement and the body.">
+  <meta property="og:image" content="https://lydiajanssen.com/images/artist-photo/Lydia%20Hat%20Studio%20Pic.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Works — Lydia Janssen">
+  <meta name="twitter:description" content="Selected paintings by Lydia Janssen — oil on linen, charcoal and pastel works spanning 2006 to 2026. Themes of movement, displacement and the body.">
+  <meta name="twitter:image" content="https://lydiajanssen.com/images/artist-photo/Lydia%20Hat%20Studio%20Pic.jpg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://lydiajanssen.com/works.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    .works-page { max-width: 1100px; margin: 0 auto; padding: 48px 32px 120px; }
+
+    .year-section { margin-bottom: 64px; }
+
+    .year-heading {
+      font-size: var(--nav-size);
+      font-weight: 400;
+      letter-spacing: var(--letter-spacing);
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px 24px;
+    }
+
+    .work-item {
+      display: block;
+      text-decoration: none;
+      align-self: start;
+    }
+
+    .work-item .thumb {
+      width: 100%;
+    }
+
+    .work-item.square-large .thumb {
+      width: 75%;
+      margin: 0;
+    }
+
+    .work-item .thumb img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Low-res archival images — display at natural small size */
+    .work-item.tiny .thumb img {
+      width: auto;
+      max-width: 100%;
+      max-height: 190px;
+    }
+
+    /* Small-format paintings — constrained to reflect actual scale */
+    .work-item.small .thumb {
+      max-width: 70%;
+    }
+
+    /* Very small display — for works shown as minor/contextual */
+    .work-item.very-small .thumb {
+      max-width: 40%;
+    }
+
+    .work-item.medium .thumb {
+      max-width: 58%;
+    }
+
+    .work-item:hover img { opacity: 0.85; }
+
+    .work-caption {
+      margin-top: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .work-title {
+      font-size: 11px;
+      color: var(--black);
+      letter-spacing: 0.04em;
+    }
+
+    .work-meta {
+      font-size: 10px;
+      color: var(--grey);
+      letter-spacing: 0.03em;
+    }
+
+    .sketches-grid {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .sketches-grid .work-title { font-size: 10px; }
+    .sketches-grid .work-meta { font-size: 9px; }
+
+    @media (max-width: 760px) {
+      .works-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 16px; }
+    }
+    @media (max-width: 480px) {
+      .works-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── LIGHTBOX ──────────────────────────────────────────────────── */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.92);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 40px;
+    }
+    #lightbox.open { display: flex; }
+
+    #lightbox-img {
+      max-width: 100%;
+      max-height: calc(100vh - 160px);
+      object-fit: contain;
+      display: block;
+    }
+
+    #lb-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 100%;
+    }
+
+    #lightbox-caption {
+      margin-top: 16px;
+      text-align: left;
+      color: rgba(255,255,255,0.85);
+      font-family: var(--font-sans);
+    }
+
+    #lightbox-title {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    #lightbox-meta {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
+    }
+
+    #lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      font-size: 28px;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+      padding: 4px;
+    }
+    #lightbox-close:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="left">
+    <a href="works.html" class="active">Works</a>
+    <a href="press.html">Press</a>
+    <a href="https://vilicusveritatis633506.substack.com" target="_blank">Substack</a>
+  </nav>
+  <a href="index.html" class="site-name">Lydia Janssen</a>
+  <nav class="right">
+    <a href="about.html">About</a>
+    <a href="cv.html">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="works-page">
+
+    <!-- 2026 -->
+    <div class="year-section">
+      <h2 class="year-heading">2026</h2>
+      <div class="works-grid">
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2026/Study in Release (Balloon) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2026/Study in Release (Balloon) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" alt="Study in Release (Balloon)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Study in Release (Balloon)</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2026/Untitled (Arms) - 2026 - Oil on linen - 120x153cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2026/Untitled (Arms) - 2026 - Oil on linen - 120x153cm.jpg" alt="Untitled (Arms)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Untitled (Arms)</span><span class="work-meta">Oil on linen</span></div>
+        </a>
+        <a class="work-item small" href="images/2026/Study in Release (I) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2026/Study in Release (I) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" alt="Study in Release (I)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Study in Release (I)</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="year-section">
+      <h2 class="year-heading">2025</h2>
+      <div class="works-grid">
+        <a class="work-item" style="grid-column: span 3;" href="images/2025/The Housebirds - 2025 - Oil, charcoal and pastel on linen - 178x256cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2025/The Housebirds - 2025 - Oil, charcoal and pastel on linen - 178x256cm.jpg" alt="The Housebirds" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Housebirds</span><span class="work-meta">Oil, charcoal and pastel on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2025/The Hat-Trick (I) - 2025 - Oil and charcoal on linen - 100x100cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2025/The Hat-Trick (I) - 2025 - Oil and charcoal on linen - 100x100cm.jpg" alt="The Hat-Trick (I)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Hat-Trick (I)</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2025/The Hat-Trick (II) - 2025 - Oil and charcoal on linen - 100x100cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2025/The Hat-Trick (II) - 2025 - Oil and charcoal on linen - 100x100cm.jpg" alt="The Hat-Trick (II)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Hat-Trick (II)</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="year-section">
+      <h2 class="year-heading">2024</h2>
+      <div class="works-grid">
+        <a class="work-item" href="images/2024/God, the Duck and the Devil - 2024 - Oil and charcoal on linen - 100x75cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/God, the Duck and the Devil - 2024 - Oil and charcoal on linen - 100x75cm.jpg" alt="God, the Duck and the Devil" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">God, the Duck and the Devil</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2024/Moving-Mourning - 2024 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/Moving-Mourning - 2024 - Oil and charcoal on linen - 178x178cm.jpg" alt="Moving-Mourning" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Moving-Mourning</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2024/The SOS - 2024 - Oil, charcoal and ink on linen - 100x75cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/The SOS - 2024 - Oil, charcoal and ink on linen - 100x75cm.jpg" alt="The SOS" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The SOS</span><span class="work-meta">Oil, charcoal and ink on linen</span></div>
+        </a>
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2024/The Mothership - 2024 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/The Mothership - 2024 - Oil and charcoal on linen - 178x178cm.jpg" alt="The Mothership" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Mothership</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2024/The Mirage - 2024 - Oil, charcoal and ink on linen - 100x75cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/The Mirage - 2024 - Oil, charcoal and ink on linen - 100x75cm.jpg" alt="The Mirage" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Mirage</span><span class="work-meta">Oil, charcoal and ink on linen</span></div>
+        </a>
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2024/The Roaring - 2024 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/The Roaring - 2024 - Oil and charcoal on linen - 178x178cm.jpg" alt="The Roaring" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Roaring</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2024/Yellow Couch - 2024 - Oil, charcoal and pencil on linen - 75x100cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/Yellow Couch - 2024 - Oil, charcoal and pencil on linen - 75x100cm.jpg" alt="Yellow Couch" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Yellow Couch</span><span class="work-meta">Oil, charcoal and pencil on linen</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2024/The Weight - 2024 - Oil and pencil on linen - 100x150cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/The Weight - 2024 - Oil and pencil on linen - 100x150cm.jpg" alt="The Weight" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Weight</span><span class="work-meta">Oil and pencil on linen</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2024/The Listing - 2024 - Oil and charcoal on linen - 120x152cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/The Listing - 2024 - Oil and charcoal on linen - 120x152cm.jpg" alt="The Listing" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Listing</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2024/The Bed (on the ship) - 2024 - Oil, charcoal and pencil on linen - 150x122cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/The Bed (on the ship) - 2024 - Oil, charcoal and pencil on linen - 150x122cm.jpg" alt="The Bed (on the ship)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Bed (on the ship)</span><span class="work-meta">Oil, charcoal and pencil on linen</span></div>
+        </a>
+        <a class="work-item medium" style="grid-column: span 2;" href="images/2024/The Slight Swimmer - 2024 - Oil and charcoal on linen - 75x100cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2024/The Slight Swimmer - 2024 - Oil and charcoal on linen - 75x100cm.jpg" alt="The Slight Swimmer" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Slight Swimmer</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2023 -->
+    <div class="year-section">
+      <h2 class="year-heading">2023</h2>
+      <div class="works-grid sketches-grid">
+        <a class="work-item" href="images/2023/Sketch 9 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2023/Sketch 9 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" alt="Sketch 9" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Sketch 9</span><span class="work-meta">Charcoal, acrylic and pencil on paper</span></div>
+        </a>
+        <a class="work-item" href="images/2023/Sketch 10 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2023/Sketch 10 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" alt="Sketch 10" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Sketch 10</span><span class="work-meta">Charcoal, acrylic and pencil on paper</span></div>
+        </a>
+        <a class="work-item" href="images/2023/Sketch 11 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2023/Sketch 11 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" alt="Sketch 11" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Sketch 11</span><span class="work-meta">Charcoal, acrylic and pencil on paper</span></div>
+        </a>
+        <a class="work-item" href="images/2023/Sketch 12 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2023/Sketch 12 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" alt="Sketch 12" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Sketch 12</span><span class="work-meta">Charcoal, acrylic and pencil on paper</span></div>
+        </a>
+        <a class="work-item" href="images/2023/Sketch 13 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2023/Sketch 13 - 2023 - Charcoal, acrylic and pencil on paper - 30x42cm.jpg" alt="Sketch 13" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Sketch 13</span><span class="work-meta">Charcoal, acrylic and pencil on paper</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2022 -->
+    <div class="year-section">
+      <h2 class="year-heading">2022</h2>
+      <div class="works-grid">
+        <a class="work-item small" href="images/2022/The Mirror - 2022 - Oil and charcoal on linen - 75x99cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2022/The Mirror - 2022 - Oil and charcoal on linen - 75x99cm.jpg" alt="The Mirror" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Mirror</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item small" href="images/2022/The Talk - 2022 - Oil, charcoal and ink on linen - 75x99cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2022/The Talk - 2022 - Oil, charcoal and ink on linen - 75x99cm.jpg" alt="The Talk" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Talk</span><span class="work-meta">Oil, charcoal and ink on linen</span></div>
+        </a>
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2022/The Cast - 2022 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2022/The Cast - 2022 - Oil and charcoal on linen - 178x178cm.jpg" alt="The Cast" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Cast</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2022/The Ride - 2022 - Oil and charcoal on linen - 153x120cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2022/The Ride - 2022 - Oil and charcoal on linen - 153x120cm.jpg" alt="The Ride" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Ride</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2022/Untitled (Standing) - 2022 - Oil and charcoal on linen - 153x120cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2022/Untitled (Standing) - 2022 - Oil and charcoal on linen - 153x120cm.jpg" alt="Untitled (Standing)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Untitled (Standing)</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2022/The Misstep - 2022 - Oil and charcoal on linen - 200x100cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2022/The Misstep - 2022 - Oil and charcoal on linen - 200x100cm.jpg" alt="The Misstep" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Misstep</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2022/Untitled (Climbing) - 2022 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2022/Untitled (Climbing) - 2022 - Oil and charcoal on linen - 178x178cm.jpg" alt="Untitled (Climbing)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Untitled (Climbing)</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2022/The Rocking Horse - 2022 - Oil and charcoal on linen - 200x330cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2022/The Rocking Horse - 2022 - Oil and charcoal on linen - 200x330cm.jpg" alt="The Rocking Horse" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Rocking Horse</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item small" href="images/2022/The Birthday - 2022 - Oil, acrylic, ink, charcoal on paper - 57x78cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2022/The Birthday - 2022 - Oil, acrylic, ink, charcoal on paper - 57x78cm.jpg" alt="The Birthday" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Birthday</span><span class="work-meta">Oil, acrylic, ink and charcoal on paper</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2021 -->
+    <div class="year-section">
+      <h2 class="year-heading">2021</h2>
+      <div class="works-grid">
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2021/The Twister - 2021 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2021/The Twister - 2021 - Oil and charcoal on linen - 178x178cm.jpg" alt="The Twister" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Twister</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2020 -->
+    <div class="year-section">
+      <h2 class="year-heading">2020</h2>
+      <div class="works-grid">
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2020/The Party - 2020 - Oil and charcoal on linen - 100x300cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2020/The Party - 2020 - Oil and charcoal on linen - 100x300cm.jpg" alt="The Party" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Party</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+      </div>
+      <div class="works-grid sketches-grid">
+        <a class="work-item" href="images/2020/Sketch 1 - 2020 - Charcoal and pencil on paper - 30x42cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2020/Sketch 1 - 2020 - Charcoal and pencil on paper - 30x42cm.jpg" alt="Sketch 1" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Sketch 1</span><span class="work-meta">Charcoal and pencil on paper</span></div>
+        </a>
+        <a class="work-item" href="images/2020/Sketch 2 - 2020 - Charcoal, acylic, and pencil on paper - 30x42cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2020/Sketch 2 - 2020 - Charcoal, acylic, and pencil on paper - 30x42cm.jpg" alt="Sketch 2" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Sketch 2</span><span class="work-meta">Charcoal, acrylic and pencil on paper</span></div>
+        </a>
+        <a class="work-item" href="images/2020/Sketch 8 - 2020 - Charcoal, acylic, and pencil on paper - 30x42cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2020/Sketch 8 - 2020 - Charcoal, acylic, and pencil on paper - 30x42cm.jpg" alt="Sketch 8" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Sketch 8</span><span class="work-meta">Charcoal, acrylic and pencil on paper</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2019 -->
+    <div class="year-section">
+      <h2 class="year-heading">2019</h2>
+      <div class="works-grid">
+        <a class="work-item" href="images/2019/Spotlight One - 2019 - Oil and charcoal on linen - 99x76cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2019/Spotlight One - 2019 - Oil and charcoal on linen - 99x76cm.jpg" alt="Spotlight One" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Spotlight One</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2019/Spotlight Two - 2019 - Oil, pastel and charcoal on linen - 99x76cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2019/Spotlight Two - 2019 - Oil, pastel and charcoal on linen - 99x76cm.jpg" alt="Spotlight Two" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Spotlight Two</span><span class="work-meta">Oil, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2019/Spotlight Three - 2019 - Oil and charcoal on linen - 76x99cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2019/Spotlight Three - 2019 - Oil and charcoal on linen - 76x99cm.jpg" alt="Spotlight Three" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Spotlight Three</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2019/The Hands - 2019 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2019/The Hands - 2019 - Oil and charcoal on linen - 178x178cm.jpg" alt="The Hands" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Hands</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2019/The Swimmer - 2019 - Oil, charcoal and pastel on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2019/The Swimmer - 2019 - Oil, charcoal and pastel on linen - 178x178cm.jpg" alt="The Swimmer" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Swimmer</span><span class="work-meta">Oil, charcoal and pastel on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2019/100 Times - 2019 - Oil, charcoal and pastel on linen - 76x99cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2019/100 Times - 2019 - Oil, charcoal and pastel on linen - 76x99cm.jpg" alt="100 Times" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">100 Times</span><span class="work-meta">Oil, charcoal and pastel on linen</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2018 -->
+    <div class="year-section">
+      <h2 class="year-heading">2018</h2>
+      <div class="works-grid">
+        <a class="work-item" style="grid-column: span 2;" href="images/2018/All The Kings Horses - 2018 - Oil, chalk, pastel, charcoal on linen - 178x286cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2018/All The Kings Horses - 2018 - Oil, chalk, pastel, charcoal on linen - 178x286cm.jpg" alt="All The Kings Horses" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">All The King&#8217;s Horses</span><span class="work-meta">Oil, chalk, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2018/The Chairman - 2018 - Oil, pastel and charcoal on linen - 91x81cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2018/The Chairman - 2018 - Oil, pastel and charcoal on linen - 91x81cm.jpg" alt="The Chairman" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Chairman</span><span class="work-meta">Oil, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2018/Epona - 2018 - Oil, pastel and charcoal on linen - 200x300cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2018/Epona - 2018 - Oil, pastel and charcoal on linen - 200x300cm.jpg" alt="Epona" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Epona</span><span class="work-meta">Oil, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2018/Trumped - 2018 - Oil, chalk and pastel on linen - 91x81cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2018/Trumped - 2018 - Oil, chalk and pastel on linen - 91x81cm.jpg" alt="Trumped" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Trumped</span><span class="work-meta">Oil, chalk and pastel on linen</span></div>
+        </a>
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2018/Cabaret - 2018 - Oil, pastel and charcoal on linen - 178x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2018/Cabaret - 2018 - Oil, pastel and charcoal on linen - 178x178cm.jpg" alt="Cabaret" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Cabaret</span><span class="work-meta">Oil, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item very-small" style="align-self: center;" href="images/2018/Study (Feats) - 2018 - Oil, pastel and charcoal on linen - 51x41cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2018/Study (Feats) - 2018 - Oil, pastel and charcoal on linen - 51x41cm.jpg" alt="Study (Feats)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Study (Feats)</span><span class="work-meta">Oil, pastel and charcoal on linen</span></div>
+        </a>
+      </div>
+      <div class="works-grid sketches-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 16px;">
+        <a class="work-item" href="images/2018/Maumare - 2018 - Ink, charcoal and pencil on paper - 55.8x76.2cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2018/Maumare - 2018 - Ink, charcoal and pencil on paper - 55.8x76.2cm.jpg" alt="Maumare" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Maumare</span><span class="work-meta">Ink, charcoal and pencil on paper</span></div>
+        </a>
+        <a class="work-item" href="images/2018/Flores - 2019 - Ink, pencil and charcoal on paper - 55.9x76.2cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2018/Flores - 2019 - Ink, pencil and charcoal on paper - 55.9x76.2cm.jpg" alt="Flores" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Flores</span><span class="work-meta">Ink, pencil and charcoal on paper</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2017 -->
+    <div class="year-section">
+      <h2 class="year-heading">2017</h2>
+      <div class="works-grid">
+        <a class="work-item" style="grid-column: span 2;" href="images/2017/Le Jeune Homme et la Mort - 2017 - Oil, charcoal and pastel on linen - 100x200cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2017/Le Jeune Homme et la Mort - 2017 - Oil, charcoal and pastel on linen - 100x200cm.jpg" alt="Le Jeune Homme et la Mort" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Le Jeune Homme et la Mort</span><span class="work-meta">Oil, charcoal and pastel on linen</span></div>
+        </a>
+        <a class="work-item small" style="align-self: center;" href="images/2017/Seacrown - 2017 - Oil, pastel and charcoal on linen - 92x82cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2017/Seacrown - 2017 - Oil, pastel and charcoal on linen - 92x82cm.jpg" alt="Seacrown" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Seacrown</span><span class="work-meta">Oil, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2017/Orange Grove - 2017 - Oil, chalk, pastel and charcoal on linen - 100x200cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2017/Orange Grove - 2017 - Oil, chalk, pastel and charcoal on linen - 100x200cm.jpg" alt="Orange Grove" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Orange Grove</span><span class="work-meta">Oil, chalk, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2017/Topsy Turvey - 2017 - Oil, chalk, pastel and charcoal on linen - 153x123cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2017/Topsy Turvey - 2017 - Oil, chalk, pastel and charcoal on linen - 153x123cm.jpg" alt="Topsy Turvey" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Topsy Turvey</span><span class="work-meta">Oil, chalk, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2017/Rabbit Run - 2017 - Oil, chalk and charcoal on canvas - 178x173cm.jpg" target="_blank">
+          <div class="thumb" style="width: 88%;"><img src="images/2017/Rabbit Run - 2017 - Oil, chalk and charcoal on canvas - 178x173cm.jpg" alt="Rabbit Run" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Rabbit Run</span><span class="work-meta">Oil, chalk and charcoal on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2017/The Mover - 2017 - Oil, chalk and pastel on linen - 163x93cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2017/The Mover - 2017 - Oil, chalk and pastel on linen - 163x93cm.jpg" alt="The Mover" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Mover</span><span class="work-meta">Oil, chalk and pastel on linen</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2017/Tango - 2017 - Oil, chalk and charcoal on linen - 92x162cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2017/Tango - 2017 - Oil, chalk and charcoal on linen - 92x162cm.jpg" alt="Tango" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Tango</span><span class="work-meta">Oil, chalk and charcoal on linen</span></div>
+        </a>
+      </div>
+      <div class="works-grid sketches-grid">
+        <a class="work-item" href="images/2017/Study (Lay Down Humpty) - 2017 - Oil, pastel and charcoal on linen - 41x51cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2017/Study (Lay Down Humpty) - 2017 - Oil, pastel and charcoal on linen - 41x51cm.jpg" alt="Study (Lay Down Humpty)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Study (Lay Down Humpty)</span><span class="work-meta">Oil, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2017/Study (Ram) - 2017 - Oil, chalk, pastel and charcoal on linen - 41x51cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2017/Study (Ram) - 2017 - Oil, chalk, pastel and charcoal on linen - 41x51cm.jpg" alt="Study (Ram)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Study (Ram)</span><span class="work-meta">Oil, chalk, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2017/Study (The Joker and the Dog) - 2017 - Oil, chalk, pastel and charcoal on linen - 51x41cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2017/Study (The Joker and the Dog) - 2017 - Oil, chalk, pastel and charcoal on linen - 51x41cm.jpg" alt="Study (The Joker and the Dog)" loading="lazy" style="width: auto; max-height: 175px;"></div>
+          <div class="work-caption"><span class="work-title">Study (The Joker and the Dog)</span><span class="work-meta">Oil, chalk, pastel and charcoal on linen</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2016 -->
+    <div class="year-section">
+      <h2 class="year-heading">2016</h2>
+      <div class="works-grid">
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <a class="work-item small" href="images/2016/Caesar - 2016 - Oil, chalk, pastel and charcoal on linen - 121x101cm.jpg" target="_blank">
+            <div class="thumb"><img src="images/2016/Caesar - 2016 - Oil, chalk, pastel and charcoal on linen - 121x101cm.jpg" alt="Caesar" loading="lazy"></div>
+            <div class="work-caption"><span class="work-title">Caesar</span><span class="work-meta">Oil, chalk, pastel and charcoal on linen</span></div>
+          </a>
+          <a class="work-item small" href="images/2016/Three Weights - 2016 - Oil, pastel, chalk and charcoal on linen - 121x101cm.jpg" target="_blank">
+            <div class="thumb"><img src="images/2016/Three Weights - 2016 - Oil, pastel, chalk and charcoal on linen - 121x101cm.jpg" alt="Three Weights" loading="lazy"></div>
+            <div class="work-caption"><span class="work-title">Three Weights</span><span class="work-meta">Oil, pastel, chalk and charcoal on linen</span></div>
+          </a>
+        </div>
+        <a class="work-item" style="grid-column: span 2;" href="images/2016/The King and Queen - 2016 - Oil, chalk and charcoal on linen - 152x122cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2016/The King and Queen - 2016 - Oil, chalk and charcoal on linen - 152x122cm.jpg" alt="The King and Queen" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The King and Queen</span><span class="work-meta">Oil, chalk and charcoal on linen</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2011-2014 -->
+    <div class="year-section">
+      <h2 class="year-heading">2011–2014</h2>
+      <div class="works-grid">
+        <a class="work-item" style="grid-column: span 2;" href="images/2014/Lameness - 2014 - Oil, chalk, pastel and charcoal on linen - 142x178cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2014/Lameness - 2014 - Oil, chalk, pastel and charcoal on linen - 142x178cm.jpg" alt="Lameness" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Lameness</span><span class="work-meta">Oil, chalk, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2012/Milk Parts - 2012 - Oil, chalk, pastel and charcoal on linen - 153x123cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2012/Milk Parts - 2012 - Oil, chalk, pastel and charcoal on linen - 153x123cm.jpg" alt="Milk Parts" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Milk Parts</span><span class="work-meta">Oil, chalk, pastel and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" href="images/2011/Bison Stack - 2011 - Oil and charcoal on canvas - 142x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2011/Bison Stack - 2011 - Oil and charcoal on canvas - 142x147cm.jpg" alt="Bison Stack" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Bison Stack</span><span class="work-meta">Oil and charcoal on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2014/The Rumble - 2014 - Oil and charcoal on linen - 117x152cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2014/The Rumble - 2014 - Oil and charcoal on linen - 117x152cm.jpg" alt="The Rumble" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Rumble</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2008 -->
+    <div class="year-section">
+      <h2 class="year-heading">2008</h2>
+      <div class="works-grid">
+        <a class="work-item square-large" style="grid-column: span 2;" href="images/2008/Untitled (Bacon) - 2008 - Oil and charcoal on canvas - 152x140cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2008/Untitled (Bacon) - 2008 - Oil and charcoal on canvas - 152x140cm.jpg" alt="Untitled (Bacon)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Untitled (Bacon)</span><span class="work-meta">Oil and charcoal on canvas</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2007 -->
+    <div class="year-section">
+      <h2 class="year-heading">2007</h2>
+      <div class="works-grid">
+        <a class="work-item" style="grid-column: span 2;" href="images/2007/Babyprint - 2007 - Oil on canvas - 140x193cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Babyprint - 2007 - Oil on canvas - 140x193cm.jpg" alt="Babyprint" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Babyprint</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item small" href="images/2007/Cafeteria - 2007 - Oil and chalk on canvas - 91x85cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Cafeteria - 2007 - Oil and chalk on canvas - 91x85cm.jpg" alt="Cafeteria" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Cafeteria</span><span class="work-meta">Oil and chalk on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2007/Chiado - 2007 - Oil, chalk and charcoal on canvas - 138x116cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Chiado - 2007 - Oil, chalk and charcoal on canvas - 138x116cm.jpg" alt="Chiado" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Chiado</span><span class="work-meta">Oil, chalk and charcoal on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2007/Horse, Hunter, Stag - 2007 - Oil on canvas - 139.7x114.3cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Horse, Hunter, Stag - 2007 - Oil on canvas - 139.7x114.3cm.jpg" alt="Horse, Hunter, Stag" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Horse, Hunter, Stag</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2007/Junction Near Cholame - 2007 - Oil on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Junction Near Cholame - 2007 - Oil on canvas - 167x147cm.jpg" alt="Junction Near Cholame" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Junction Near Cholame</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <a class="work-item" href="images/2007/Left Leg Down - 2007 - Oil on canvas - 147x117cm.jpg" target="_blank">
+            <div class="thumb"><img src="images/2007/Left Leg Down - 2007 - Oil on canvas - 147x117cm.jpg" alt="Left Leg Down" loading="lazy"></div>
+            <div class="work-caption"><span class="work-title">Left Leg Down</span><span class="work-meta">Oil on canvas</span></div>
+          </a>
+          <a class="work-item small" href="images/2007/Number One - 2007 - Oil on canvas - 147x121cm.jpg" target="_blank">
+            <div class="thumb"><img src="images/2007/Number One - 2007 - Oil on canvas - 147x121cm.jpg" alt="Number One" loading="lazy"></div>
+            <div class="work-caption"><span class="work-title">Number One</span><span class="work-meta">Oil on canvas</span></div>
+          </a>
+        </div>
+        <a class="work-item" href="images/2007/Larry's Leap - 2007 - Oil on canvas - 152x127cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Larry's Leap - 2007 - Oil on canvas - 152x127cm.jpg" alt="Larry&#8217;s Leap" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Larry&#8217;s Leap</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2007/Legup - 2007 - Oil on canvas - 132x100cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Legup - 2007 - Oil on canvas - 132x100cm.jpg" alt="Legup" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Legup</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2007/Place Your Bets - 2007 - Oil on canvas - 142x203cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Place Your Bets - 2007 - Oil on canvas - 142x203cm.jpg" alt="Place Your Bets" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Place Your Bets</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2007/Bicep - 2007 - Oil on canvas - 117x152cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Bicep - 2007 - Oil on canvas - 117x152cm.jpg" alt="Bicep" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Bicep</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2007/The Late Break - 2007 - Oil on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/The Late Break - 2007 - Oil on canvas - 167x147cm.jpg" alt="The Late Break" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">The Late Break</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2007/Knottedhare - 2007 - Oil and acrylic on canvas - 152x127cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Knottedhare - 2007 - Oil and acrylic on canvas - 152x127cm.jpg" alt="Knottedhare" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Knottedhare</span><span class="work-meta">Oil and acrylic on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2007/Triplethreat - 2007 - Oil, chalk and charcoal on canvas - 168x152cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2007/Triplethreat - 2007 - Oil, chalk and charcoal on canvas - 168x152cm.jpg" alt="Triplethreat" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Triplethreat</span><span class="work-meta">Oil, chalk and charcoal on canvas</span></div>
+        </a>
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <a class="work-item small" href="images/2007/Graffiti Kiss - 2007 - Oil on canvas - 140x114cm.jpg" target="_blank">
+            <div class="thumb"><img src="images/2007/Graffiti Kiss - 2007 - Oil on canvas - 140x114cm.jpg" alt="Graffiti Kiss" loading="lazy"></div>
+            <div class="work-caption"><span class="work-title">Graffiti Kiss</span><span class="work-meta">Oil on canvas</span></div>
+          </a>
+          <a class="work-item small" href="images/2007/Saddle Swell - 2007 - Oil on canvas - 132x112cm.jpg" target="_blank">
+            <div class="thumb"><img src="images/2007/Saddle Swell - 2007 - Oil on canvas - 132x112cm.jpg" alt="Saddle Swell" loading="lazy"></div>
+            <div class="work-caption"><span class="work-title">Saddle Swell</span><span class="work-meta">Oil on canvas</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2006 -->
+    <div class="year-section">
+      <h2 class="year-heading">2006</h2>
+      <div class="works-grid">
+        <a class="work-item" style="grid-column: span 2;" href="images/2006/Aidan's Answer - 2006 - Oil and chalk on canvas - 127x152cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2006/Aidan's Answer - 2006 - Oil and chalk on canvas - 127x152cm.jpg" alt="Aidan's Answer" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Aidan&#8217;s Answer</span><span class="work-meta">Oil and chalk on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2006/Cutoff - 2006 - Oil on canvas - 152x122cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2006/Cutoff - 2006 - Oil on canvas - 152x122cm.jpg" alt="Cutoff" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Cutoff</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2006/Groundplay - 2006 - Oil and chalk on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2006/Groundplay - 2006 - Oil and chalk on canvas - 167x147cm.jpg" alt="Groundplay" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Groundplay</span><span class="work-meta">Oil and chalk on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2006/High Arch - 2006 - Oil on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2006/High Arch - 2006 - Oil on canvas - 167x147cm.jpg" alt="High Arch" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">High Arch</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2006/Nag - 2006 - Oil and chalk on canvas - 147x121cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2006/Nag - 2006 - Oil and chalk on canvas - 147x121cm.jpg" alt="Nag" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Nag</span><span class="work-meta">Oil and chalk on canvas</span></div>
+        </a>
+        <div style="display: flex; flex-direction: column; gap: 32px;">
+          <a class="work-item small" href="images/2006/Red Crown - 2006 - Oil on canvas - 147x167cm.jpg" target="_blank">
+            <div class="thumb"><img src="images/2006/Red Crown - 2006 - Oil on canvas - 147x167cm.jpg" alt="Red Crown" loading="lazy"></div>
+            <div class="work-caption"><span class="work-title">Red Crown</span><span class="work-meta">Oil on canvas</span></div>
+          </a>
+          <a class="work-item small" href="images/2006/Sails - 2006 - Oil on canvas - 117x152cm.jpg" target="_blank">
+            <div class="thumb"><img src="images/2006/Sails - 2006 - Oil on canvas - 117x152cm.jpg" alt="Sails" loading="lazy"></div>
+            <div class="work-caption"><span class="work-title">Sails</span><span class="work-meta">Oil on canvas</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2005 -->
+    <div class="year-section">
+      <h2 class="year-heading">2005</h2>
+      <div class="works-grid">
+        <a class="work-item" style="grid-column: span 2;" href="images/2005/Blooming Mouth - 2005 - Oil and charcoal on canvas - 132x112cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2005/Blooming Mouth - 2005 - Oil and charcoal on canvas - 132x112cm.jpg" alt="Blooming Mouth" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Blooming Mouth</span><span class="work-meta">Oil and charcoal on canvas</span></div>
+        </a>
+        <a class="work-item small" href="images/2005/Body One - 2005 - Oil on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2005/Body One - 2005 - Oil on canvas - 167x147cm.jpg" alt="Body One" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Body One</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item small" href="images/2005/Body Two - 2005 - Oil on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2005/Body Two - 2005 - Oil on canvas - 167x147cm.jpg" alt="Body Two" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Body Two</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2005/Bone - 2005 - Oil on canvas - 101x127cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2005/Bone - 2005 - Oil on canvas - 101x127cm.jpg" alt="Bone" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Bone</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item small" href="images/2005/Breathhold - 2005 - Oil on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2005/Breathhold - 2005 - Oil on canvas - 167x147cm.jpg" alt="Breathhold" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Breathhold</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2005/Untitled (Belly) - 2005 - Oil on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2005/Untitled (Belly) - 2005 - Oil on canvas - 167x147cm.jpg" alt="Untitled (Belly)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Untitled (Belly)</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2005/Rollerknee - 2005 - Oil on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2005/Rollerknee - 2005 - Oil on canvas - 167x147cm.jpg" alt="Rollerknee" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Rollerknee</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2005/Untitled (Downtown) - 2005 - Oil on canvas - 137x112cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2005/Untitled (Downtown) - 2005 - Oil on canvas - 137x112cm.jpg" alt="Untitled (Downtown)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Untitled (Downtown)</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 2004 -->
+    <div class="year-section">
+      <h2 class="year-heading">2004</h2>
+      <div class="works-grid">
+        <a class="work-item" href="images/2004/Untitled (Expand) - 2004 - Oil on canvas - 167x147cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2004/Untitled (Expand) - 2004 - Oil on canvas - 167x147cm.jpg" alt="Untitled (Expand)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Untitled (Expand)</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+        <a class="work-item" href="images/2004/Untitled (Learning Curve) - 2004 - Oil on canvas - 127x102cm.jpg" target="_blank">
+          <div class="thumb"><img src="images/2004/Untitled (Learning Curve) - 2004 - Oil on canvas - 127x102cm.jpg" alt="Untitled (Learning Curve)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Untitled (Learning Curve)</span><span class="work-meta">Oil on canvas</span></div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Close">&times;</button>
+  <div id="lb-inner">
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption">
+    <div id="lightbox-title"></div>
+    <div id="lightbox-meta"></div>
+  </div>
+  </div>
+</div>
+
+<script>
+  const lightbox     = document.getElementById('lightbox');
+  const lbImg        = document.getElementById('lightbox-img');
+  const lbTitle      = document.getElementById('lightbox-title');
+  const lbMeta       = document.getElementById('lightbox-meta');
+  const lbClose      = document.getElementById('lightbox-close');
+
+  function openLightbox(src, title, medium, year, dims) {
+    lbImg.src = src;
+    lbImg.alt = title;
+    lbTitle.textContent = title;
+    lbMeta.textContent  = [year, medium, dims].filter(Boolean).join('  ·  ');
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // Intercept all work-item clicks
+  document.querySelectorAll('.work-item').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const img    = link.querySelector('img');
+      const src    = img ? img.src : link.href;
+      const title  = (link.querySelector('.work-title') || {}).textContent || '';
+      const medium = (link.querySelector('.work-meta')  || {}).textContent || '';
+
+      // Parse year and dimensions from the filename
+      const filename = decodeURIComponent(src.split('/').pop()).replace(/\.jpg$/i, '');
+      const parts    = filename.split(' - ');
+      const year     = parts.find(p => /^\d{4}$/.test(p.trim())) || '';
+      const dims     = parts[parts.length - 1] || '';
+
+      openLightbox(src, title, medium, year, dims);
+    });
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+<footer>
+  <span>&copy; 2026 Lydia Janssen</span>
+  <a href="https://www.instagram.com/lydiajanssenart/" target="_blank">Instagram</a>
+</footer>
+<span class="page-number">01</span>
+
+</body>
+</html>
