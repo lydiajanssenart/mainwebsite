@@ -141,11 +141,28 @@
     }
     #lightbox.open { display: flex; }
 
+    #lb-scroll {
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 100%;
+      max-height: calc(100vh - 160px);
+    }
     #lightbox-img {
+      display: block;
       max-width: 100%;
       max-height: calc(100vh - 160px);
       object-fit: contain;
-      display: block;
+      cursor: zoom-in;
+      transition: max-width 0.3s ease, max-height 0.3s ease;
+    }
+    #lightbox-img.zoomed {
+      cursor: zoom-out;
+      max-width: none;
+      max-height: none;
+      width: auto;
+      height: 170vh;
     }
 
     #lb-inner {
@@ -211,18 +228,18 @@
     <!-- 2026 -->
     <div class="year-section">
       <h2 class="year-heading">2026</h2>
-      <div class="works-grid">
-        <a class="work-item square-large" style="grid-column: span 2;" href="images/2026/Study in Release (Balloon) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+      <div class="works-grid" style="grid-template-columns: repeat(2, 1fr);">
+        <a class="work-item" href="images/2026/Study in Release (Balloon) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
           <div class="thumb"><img src="images/2026/Study in Release (Balloon) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" alt="Study in Release (Balloon)" loading="lazy"></div>
           <div class="work-caption"><span class="work-title">Study in Release (Balloon)</span><span class="work-meta">Oil and charcoal on linen</span></div>
         </a>
-        <a class="work-item" href="images/2026/Untitled (Arms) - 2026 - Oil on linen - 120x153cm.jpg" target="_blank">
-          <div class="thumb"><img src="images/2026/Untitled (Arms) - 2026 - Oil on linen - 120x153cm.jpg" alt="Untitled (Arms)" loading="lazy"></div>
-          <div class="work-caption"><span class="work-title">Untitled (Arms)</span><span class="work-meta">Oil on linen</span></div>
-        </a>
-        <a class="work-item small" href="images/2026/Study in Release (I) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
+        <a class="work-item" href="images/2026/Study in Release (I) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" target="_blank">
           <div class="thumb"><img src="images/2026/Study in Release (I) - 2026 - Oil and charcoal on linen - 178x178cm.jpg" alt="Study in Release (I)" loading="lazy"></div>
           <div class="work-caption"><span class="work-title">Study in Release (I)</span><span class="work-meta">Oil and charcoal on linen</span></div>
+        </a>
+        <a class="work-item" style="grid-column: span 2;" href="images/2026/Untitled (Arms) - 2026 - Oil on linen - 120x153cm.jpg" target="_blank">
+          <div class="thumb" style="width: 45%;"><img src="images/2026/Untitled (Arms) - 2026 - Oil on linen - 120x153cm.jpg" alt="Untitled (Arms)" loading="lazy"></div>
+          <div class="work-caption"><span class="work-title">Untitled (Arms)</span><span class="work-meta">Oil on linen</span></div>
         </a>
       </div>
     </div>
@@ -752,7 +769,7 @@
 <div id="lightbox">
   <button id="lightbox-close" aria-label="Close">&times;</button>
   <div id="lb-inner">
-  <img id="lightbox-img" src="" alt="">
+  <div id="lb-scroll"><img id="lightbox-img" src="" alt=""></div>
   <div id="lightbox-caption">
     <div id="lightbox-title"></div>
     <div id="lightbox-meta"></div>
@@ -777,6 +794,10 @@
   }
 
   function closeLightbox() {
+    lbImg.classList.remove('zoomed');
+    lbScroll.scrollLeft = 0;
+    lbScroll.scrollTop  = 0;
+    isZoomed = false;
     lightbox.classList.remove('open');
     lbImg.src = '';
     document.body.style.overflow = '';
@@ -799,6 +820,33 @@
 
       openLightbox(src, title, medium, year, dims);
     });
+  });
+
+  // Zoom on click within lightbox image
+  const lbScroll = document.getElementById('lb-scroll');
+  let isZoomed = false;
+  lbImg.addEventListener('click', e => {
+    e.stopPropagation();
+    if (!isZoomed) {
+      // Record where on the image the user clicked (as a fraction)
+      const rect = lbImg.getBoundingClientRect();
+      const xFrac = (e.clientX - rect.left) / rect.width;
+      const yFrac = (e.clientY - rect.top)  / rect.height;
+      lbImg.classList.add('zoomed');
+      isZoomed = true;
+      // After image resizes, scroll so the clicked spot stays centred
+      requestAnimationFrame(() => {
+        const newW = lbImg.scrollWidth;
+        const newH = lbImg.scrollHeight;
+        lbScroll.scrollLeft = newW * xFrac - lbScroll.clientWidth  / 2;
+        lbScroll.scrollTop  = newH * yFrac - lbScroll.clientHeight / 2;
+      });
+    } else {
+      lbImg.classList.remove('zoomed');
+      lbScroll.scrollLeft = 0;
+      lbScroll.scrollTop  = 0;
+      isZoomed = false;
+    }
   });
 
   lbClose.addEventListener('click', closeLightbox);
