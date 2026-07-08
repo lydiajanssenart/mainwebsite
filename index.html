@@ -33,7 +33,7 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      background: #000;
+      background: #1a1714;
     }
 
     /* Fullscreen slideshow */
@@ -154,36 +154,19 @@
     <div class="slide" style="background-image: url('images/situ/16366EB7-90E2-43F7-846E-D9A57C2E6840.JPG'); background-position: top center;"></div>
     <div class="slide" style="background-image: url('images/situ/IMG_4075.jpg'); background-position: top center;"></div>
     <div class="slide" style="background-image: url('images/situ/71DA67E1-A4A6-4857-A729-D7531D6C9045.JPG'); background-position: top center;"></div>
-    <div class="slide" style="background-image: url('images/artist-photo/Lydia Hat Studio Pic.jpg'); background-position: top center;"></div>
     <div class="slide" style="background-image: url('images/situ/IMG_4441.jpg'); background-position: top center;"></div>
     <div class="slide" style="background-image: url('images/situ/new-1.jpg');"></div>
     <div class="slide" style="background-image: url('images/situ/new-2.jpg');"></div>
-    <div class="slide" style="background-image: url('images/situ/situ-3.jpg');"></div>
 
 
     <div class="slide" style="background-image: url('images/situ/IMG_8605.jpg');"></div>
-    <div class="slide" style="background-image: url('Lydia Nicola Rocking Horse.JPG'); background-position: top center;"></div>
-    <div class="slide" style="background-image: url('Lydia Nicola Red Queen.JPG'); background-position: top center;"></div>
-    <div class="slide" style="background-image: url('IMG_9225.jpg'); background-position: top center;"></div>
-    <div class="slide" style="background-image: url('2C558DB8-1321-4AD2-B85E-0E95F396E047.JPG'); background-position: top center;"></div>
-    <div class="slide" style="background-image: url('79679c80-d987-4192-b0f4-f31ec4dc360f.jpg'); background-position: top center;"></div>
-    <div class="slide" style="background-image: url('9EF2FFCD-B56D-466F-B0C3-0AC96738FD5F.JPG');"></div>
-    <div class="slide" style="background-image: url('FD643709-F034-49E6-8B32-583B5E1C57B4.JPG');"></div>
-    <div class="slide" style="background-image: url('IMG_4075 2.jpg');"></div>
-    <div class="slide" style="background-image: url('16366EB7-90E2-43F7-846E-D9A57C2E6840 3.JPG');"></div>
-    <div class="slide" style="background-image: url('71DA67E1-A4A6-4857-A729-D7531D6C9045 3.JPG'); background-position: top center;"></div>
-
-    <div class="slide" style="background-image: url('0050128b-f2af-4430-9b80-f1ae52a27f4e.jpg'); background-position: top center;"></div>
-    <div class="slide" style="background-image: url('2ff0209a-dedb-49f9-a010-08a077978022 3.JPG');"></div>
-    <div class="slide" style="background-image: url('627ba41d-26f9-4277-8b35-3cf186a94d2d.JPG');"></div>
-    <div class="slide" style="background-image: url('8d9fd9db-0203-4fe0-bdae-db1e55206c6d 3.jpg');"></div>
-    <div class="slide" style="background-image: url('IMG_3760 2.JPG');"></div>
-    <div class="slide" style="background-image: url('IMG_3773 2.JPG');"></div>
-    <div class="slide" style="background-image: url('IMG_3883 2.JPG');"></div>
-    <div class="slide" style="background-image: url('IMG_8022 2.JPG');"></div>
-    <div class="slide" style="background-image: url('554e045a-f84e-4d7a-8eb8-2faa2f30a706.jpg');"></div>
-    <div class="slide" style="background-image: url('IMG_3873 2.JPG'); background-position: top center;"></div>
-    <div class="slide" style="background-image: url('IMG_7044 3.jpg'); background-position: top center;"></div>
+    <div class="slide" style="background-image: url('images/situ/IMG_3873.jpg');"></div>
+    <div class="slide" style="background-image: url('images/situ/IMG_3883.jpg');"></div>
+    <div class="slide" style="background-image: url('images/situ/IMG_9225.jpg');"></div>
+    <div class="slide" style="background-image: url('images/situ/London_Swimmer.jpg');"></div>
+    <div class="slide" style="background-image: url('images/situ/79679.jpg');"></div>
+    <div class="slide" style="background-image: url('images/situ/Lydia_Nicola_Rocking_Horse.jpg');"></div>
+    <div class="slide" style="background-image: url('images/situ/Lydia_Hat_Studio.jpg');"></div>
 
   </div>
 
@@ -191,7 +174,7 @@
     <nav class="left">
       <a href="works.html">Works</a>
       <a href="press.html">Press</a>
-    <a href="https://vilicusveritatis633506.substack.com" target="_blank">Substack</a>
+    <a href="https://lydiajanssen.substack.com" target="_blank">Substack</a>
     </nav>
     <a href="index.html" class="site-name">Lydia Janssen</a>
     <nav class="right">
@@ -202,37 +185,21 @@
   </header>
 
   <script>
-    const slideshow = document.getElementById('slideshow');
-    const slideEls = Array.from(document.querySelectorAll('.slide'));
     const anims = ['kenburns-1','kenburns-2','kenburns-3','kenburns-4'];
-
-    // Shuffle slides so each page load starts differently
-    for (let i = slideEls.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      slideshow.appendChild(slideEls[j]);
-      [slideEls[i], slideEls[j]] = [slideEls[j], slideEls[i]];
-    }
-
-    const slides = document.querySelectorAll('.slide');
+    const slides = Array.from(document.querySelectorAll('.slide'));
     let current = 0;
 
-    function activate(index) {
-      const slide = slides[index];
-      slide.style.animation = 'none';
-      slide.offsetHeight;
-      slide.style.animation = `${anims[index % 4]} 5s ease-in-out forwards`;
-      slide.classList.add('active');
+    function activate(i) {
+      const s = slides[i];
+      s.style.animation = 'none';
+      void s.offsetWidth;
+      s.style.animation = `${anims[i % 4]} 7s ease-in-out forwards`;
+      s.classList.add('active');
     }
 
-    function deactivate(index) {
-      const slide = slides[index];
-      slide.classList.remove('active');
-      // Wait for the opacity fade-out to finish before resetting the
-      // animation, so the image doesn't visibly snap back into position
-      // while it's still partially visible.
-      setTimeout(() => {
-        slide.style.animation = 'none';
-      }, 1400);
+    function deactivate(i) {
+      slides[i].classList.remove('active');
+      setTimeout(() => { slides[i].style.animation = 'none'; }, 1400);
     }
 
     activate(0);
@@ -241,7 +208,7 @@
       deactivate(current);
       current = (current + 1) % slides.length;
       activate(current);
-    }, 4200);
+    }, 5500);
   </script>
 
 </body>
