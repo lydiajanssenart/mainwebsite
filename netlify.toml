@@ -1,0 +1,24 @@
+# Netlify configuration for lydiajanssen.com
+
+[build]
+  publish = "."
+
+# Force HTTP → HTTPS on apex domain
+[[redirects]]
+  from = "http://lydiajanssen.com/*"
+  to   = "https://lydiajanssen.com/:splat"
+  status = 301
+  force  = true
+
+# www → non-www (canonical domain is apex)
+[[redirects]]
+  from = "https://www.lydiajanssen.com/*"
+  to   = "https://lydiajanssen.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from = "http://www.lydiajanssen.com/*"
+  to   = "https://lydiajanssen.com/:splat"
+  status = 301
+  force  = true
