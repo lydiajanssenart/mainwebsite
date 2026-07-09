@@ -123,8 +123,31 @@
     @media (max-width: 760px) {
       .works-grid { grid-template-columns: repeat(2, 1fr); gap: 20px 16px; }
     }
-    @media (max-width: 480px) {
-      .works-grid { grid-template-columns: 1fr; }
+    @media (max-width: 600px) {
+      .works-page { padding-left: 20px; padding-right: 20px; }
+      /* Single-column layout — overrides all inline grid-template-columns */
+      .works-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px 0;
+      }
+      /* Reset grid-column span overrides so no implicit columns are created */
+      .works-grid .work-item[style*="grid-column"] {
+        grid-column: auto !important;
+      }
+      /* All thumbnails fill the full column width on mobile */
+      .works-grid .work-item .thumb,
+      .works-grid .work-item.square-large .thumb,
+      .works-grid .work-item.small .thumb,
+      .works-grid .work-item.very-small .thumb,
+      .works-grid .work-item.medium .thumb {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      /* Sketches and small studies — half-width to reflect actual scale */
+      .works-grid.sketches-grid .work-item .thumb {
+        width: 50% !important;
+        max-width: 50% !important;
+      }
     }
 
     /* ── LIGHTBOX ──────────────────────────────────────────────────── */
