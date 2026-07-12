@@ -276,4 +276,8 @@ footer {
   .page-content { padding: 48px 20px 80px; }
   .gallery-item { padding: 24px 20px; }
   .press-grid { grid-template-columns: 1fr; }
+
+  .about-layout { flex-direction: column; gap: 28px; }
+  .about-photo { width: 100%; max-width: 280px; margin: 0 auto; }
+  .about-bio { font-size: 14px; }
 }
