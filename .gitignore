@@ -60,3 +60,6 @@ Screenshot 2026-07-07 at 09.23.48.png
 
 # Files set aside for deletion — never publish
 _to_delete/
+
+# Helper scripts — never publish
+convert_heic.command
