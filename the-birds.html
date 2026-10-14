@@ -56,6 +56,16 @@
     .birds-bio a { color: var(--black); border-bottom: 1px solid #ccc; }
     .birds-bio a:hover { opacity: 1; border-color: var(--black); }
 
+    .birds-video { max-width: 680px; margin: 0 auto 72px; }
+    .birds-video video {
+      display: block; width: 100%; max-width: 420px; height: auto;
+      margin: 0 auto; background: #f4f4f4;
+    }
+    .birds-video figcaption {
+      max-width: 420px; margin: 10px auto 0;
+      font-size: 11px; color: var(--grey); letter-spacing: 0.03em;
+    }
+
     .section-label {
       font-size: var(--nav-size);
       font-weight: 400;
@@ -126,6 +136,16 @@
       </div>
 
       <p class="birds-bio">Lydia Janssen (b. 1976, USA) is a painter and former professional modern dancer who lives between Bali and Portugal. She is represented by REDSEA Gallery, Singapore. <a href="about.html">Full biography</a> &nbsp;&middot;&nbsp; <a href="works.html">All works</a> &nbsp;&middot;&nbsp; <a href="cv.html">CV</a></p>
+    </section>
+
+    <section class="birds-video">
+      <h2 class="section-label">On process</h2>
+      <figure>
+        <video controls playsinline preload="metadata" poster="images/the-birds/the-birds-process-poster.jpg" width="1008" height="1550">
+          <source src="images/the-birds/the-birds-process.mp4" type="video/mp4">
+        </video>
+        <figcaption>Lydia Janssen on <em>The Birds</em>, Bali studio</figcaption>
+      </figure>
     </section>
 
     <h2 class="section-label">The works</h2>

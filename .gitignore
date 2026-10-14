@@ -63,3 +63,9 @@ _to_delete/
 
 # Helper scripts — never publish
 convert_heic.command
+
+# Video originals — never publish (too large for GitHub)
+*.mov
+*.MOV
+*.mp4
+!images/the-birds/*.mp4
